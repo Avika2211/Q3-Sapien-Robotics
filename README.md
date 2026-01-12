@@ -22,3 +22,6 @@ The training process follows a structured multi-stage approach to compensate for
 (F) Validation and Evaluation Methodology for Accuracy and Reliability
 
 Validation of the proposed VLM system is performed using multiple task-specific metrics to ensure reliability and safety. Localization accuracy is evaluated using Intersection-over-Union thresholds and center-point error to assess bounding box precision. Counting accuracy is measured using absolute count error and exact match rates between predicted and ground-truth defect counts. Hallucination is explicitly evaluated by measuring the false positive rate on defect-free PCBs and the rate of unsupported claims, where the model reports defects not detected by the vision encoder. Confidence calibration metrics such as Expected Calibration Error are used to assess the reliability of confidence scores. Finally, end-to-end latency is measured on the target deployment hardware to verify that the system consistently meets the sub-2-second inference requirement under real operating conditions.
+
+<img width="961" height="1138" alt="image" src="https://github.com/user-attachments/assets/b66dd5cd-cbfc-470e-a6b1-5b540d5b18dd" />
+
