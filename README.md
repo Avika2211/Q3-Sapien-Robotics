@@ -18,10 +18,11 @@ Reducing hallucinations is critical in industrial inspection systems, as false d
 (E) Multi-Stage Training Strategy and Synthetic QA Generation
 
 The training process follows a structured multi-stage approach to compensate for the lack of annotated QA pairs. In the first stage, the vision encoder is trained independently on the PCB dataset using bounding box supervision to achieve high defect detection and localization accuracy. In the second stage, synthetic question–answer pairs are automatically generated from the bounding box annotations using deterministic templates, such as counting defects, querying defects in specific regions of the PCB, or checking the presence or absence of certain defect types. Since the answers are directly derived from ground-truth annotations, this process introduces no hallucination noise. In the third stage, the language model is instruction-tuned using these synthetic QA pairs while keeping the vision encoder frozen, aligning natural language queries with structured visual inputs. Finally, robustness is improved using data augmentation techniques such as noise injection, lighting variation, blur, and partial occlusion to simulate real-world inspection conditions.
+<img width="961" height="1138" alt="image" src="https://github.com/user-attachments/assets/b66dd5cd-cbfc-470e-a6b1-5b540d5b18dd" />
 
 (F) Validation and Evaluation Methodology for Accuracy and Reliability
 
 Validation of the proposed VLM system is performed using multiple task-specific metrics to ensure reliability and safety. Localization accuracy is evaluated using Intersection-over-Union thresholds and center-point error to assess bounding box precision. Counting accuracy is measured using absolute count error and exact match rates between predicted and ground-truth defect counts. Hallucination is explicitly evaluated by measuring the false positive rate on defect-free PCBs and the rate of unsupported claims, where the model reports defects not detected by the vision encoder. Confidence calibration metrics such as Expected Calibration Error are used to assess the reliability of confidence scores. Finally, end-to-end latency is measured on the target deployment hardware to verify that the system consistently meets the sub-2-second inference requirement under real operating conditions.
 
-<img width="961" height="1138" alt="image" src="https://github.com/user-attachments/assets/b66dd5cd-cbfc-470e-a6b1-5b540d5b18dd" />
+
 
